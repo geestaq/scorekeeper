@@ -14,3 +14,12 @@ it('renders correct name', () => {
 
   expect(playerNameRendered).toEqual(playerNamePassed);
 });
+
+it('renders correct score', () => {
+  const playerScorePassed = 5;
+  const playerComponent = shallow(<Player score={playerScorePassed} />);
+
+  const playerScoreRendered = Number(playerComponent.find('.Player__score').text());
+
+  expect(playerScoreRendered).toEqual(playerScorePassed);
+});
